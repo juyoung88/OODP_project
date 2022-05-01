@@ -65,7 +65,7 @@ public class Member {
             }
         }
     }
-    public Pet findByID(String petID){
+    public Pet findByPetID(String petID){
         for (int i = 0; i < petList.size(); i++) {
             if (petID.equals(petList.get(i).getPetID())) return petList.get(i);
 
