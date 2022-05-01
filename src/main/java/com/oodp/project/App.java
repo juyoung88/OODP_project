@@ -129,9 +129,9 @@ public class App {
                                 System.out.println("------------------------------");
 
                                 String petID = sc.next();
-                                if(m.findByID(petID).getPetID() == "0") continue;
+                                if(m.findByPetID(petID).getPetID() == "0") continue;
 
-                                CheckIn_Info check = new CheckIn_Info(m, m.findByID(petID), new ArrayList<>(), new ArrayList<>(), 0, new Date(), new Date());
+                                CheckIn_Info check = new CheckIn_Info(m, m.findByPetID(petID), new ArrayList<>(), new ArrayList<>(), 0, new Date(), new Date());
 
                                 typeMonitor(check);
                                 typeInfo(check);
