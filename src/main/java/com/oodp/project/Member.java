@@ -1,4 +1,5 @@
 package com.oodp.project;
+import java.util.Iterator;
 import java.util.List;
 
 public class Member {
@@ -36,5 +37,33 @@ public class Member {
         this.petList = petList;
         this.membershipPoint = membershipPoint;
     };
+
+    public void addPetInfo(String petName) {
+        Monitor m = new Monitor();
+        int petID = getPetList().size() + 1;
+        Pet p = new Pet( Integer.toString(petID), petName , m);
+        this.petList.add(p);
+
+        System.out.println("Pet Info Addition Successful!");
+        System.out.println(getMemberID() + "'s new pet : " + p.getPetName());
+    }
+
+    public void viewPetList(){
+        List<Pet> petList = this.getPetList();
+        Iterator iterator = petList.iterator();
+        System.out.println("------------------------------");
+        System.out.println("petList.size() : " + petList.size());
+        if (petList.size() == 0)
+            System.out.println("Your Pet List is Empty! Please Add Your Pet Info First :)");
+        else {
+            System.out.println("[" + getMemberID() + "'s petList]");
+
+            System.out.println("<petID>  \t<petName>  \t< monitor> ");
+            for (int i = 0; i < petList.size(); i++) {
+                // TODO: monitor 정보 출력
+                System.out.println("   " + petList.get(i).getPetID() + "\t\t  " + petList.get(i).getPetName());
+            }
+        }
+    }
 
 }
