@@ -83,7 +83,7 @@ public class App {
                 System.out.println("[MEMBER MODE]");
 
 
-                // TODO: 나중에 삭제하기
+                // TODO: Delete later
 //                s.addMember(new Member("1", new ArrayList<>(),0),memberRepository);
 //                s.addMember(new Member("2", new ArrayList<>(),0),memberRepository);
 //                s.addMember(new Member("3", new ArrayList<>(),0),memberRepository);
