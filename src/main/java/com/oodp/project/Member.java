@@ -65,5 +65,14 @@ public class Member {
             }
         }
     }
+    public Pet findByPetID(String petID){
+        for (int i = 0; i < petList.size(); i++) {
+            if (petID.equals(petList.get(i).getPetID())) return petList.get(i);
+
+        }
+        System.out.println("The petID does not exist. Please try again.");
+        Monitor m = new Monitor();
+        return new Pet("0", "" , m);
+    }
 
 }
