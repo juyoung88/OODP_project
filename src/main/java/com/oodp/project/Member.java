@@ -87,8 +87,16 @@ public class Member {
     public void checkIn(Member m, String petID, List<CheckIn_Info> checkInList) {
         CheckIn_Info check = new CheckIn_Info(m, m.findByPetID(petID), new ArrayList<>(), new ArrayList<>(), 0, new Date(), new Date());
 
-        typeMonitor(check);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Do you want Monitor Service ? yes(1) no (2)");
+        char c = sc.next().charAt(0);
+        if(c == '1'){
+            typeMonitor(check);
+        }
+
         type_checkIn_info(check);
+        view_checkIn_info(checkInList, m);
 
         // repository 에 저장
         checkInList.add(check);
