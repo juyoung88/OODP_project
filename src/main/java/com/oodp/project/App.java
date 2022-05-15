@@ -49,45 +49,8 @@ public class App {
                 }
             }
             else if(c == '2') {
-//                System.out.println("------------------------------");
-//
-//                System.out.println("IN MEMBER MODE");
-//                System.out.println("------------------------------");
-//                Member member = new Member("1", new ArrayList<>(),0);
-//                CheckIn_Info check = new CheckIn_Info(member, new ArrayList<>(), new ArrayList<>(), 0, new Date(), new Date());
-//
-//                //System.out.println("CHOOSE MEMBER");
-//                //memberRepository.showAll();
-//
-//                while(true){
-//
-//                    System.out.println("CHOOSE MENU: CHECK-IN(1) RETURN(2)");
-//                    System.out.println("------------------------------");
-//
-//                    c = sc.next().charAt(0);
-//                    if(c =='1') {
-//                        System.out.println("------------------------------");
-//                        System.out.println("Need some information for check-in ");
-//                        System.out.println("------------------------------");
-//
-//                        typeMonitor(check);
-//                        typeInfo(check);
-//                        printInfo(check);
-//
-//                    }
-//                    else if(c =='2') {
-//                        break;
-//                    }
-//                 }
 
                 System.out.println("[MEMBER MODE]");
-
-
-                // TODO: Delete later
-//                s.addMember(new Member("1", new ArrayList<>(),0),memberRepository);
-//                s.addMember(new Member("2", new ArrayList<>(),0),memberRepository);
-//                s.addMember(new Member("3", new ArrayList<>(),0),memberRepository);
-//                System.out.println("Member Addition Successful!");
 
                 while(true) {
                     System.out.println("---------------------------");
