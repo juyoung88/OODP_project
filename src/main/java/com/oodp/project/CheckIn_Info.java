@@ -18,18 +18,26 @@ public class CheckIn_Info {
     private Date startDate;
     private Date endDate;
     private Pet pet;
-
-
     private Member member;
+
 
     public CheckIn_Info(Member member, Pet pet, List<MonitorType> monitorTypes, List<String> requirement, int price, Date startDate, Date endDate) {
         super();
+        this.member = member;
         this.pet = pet;
         this.monitorTypes = monitorTypes;
         this.requirement = requirement;
         this.price = price;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
     }
 
     public void setPet(Pet pet) {
