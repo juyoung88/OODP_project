@@ -127,4 +127,38 @@ public class CheckIn_Info {
         }
         return price;
     }
+    public void printMonitorResult() {
+        for (MonitorType monitorType : getMonitorTypes()) {
+            switch (monitorType) {
+                case Sleep:
+                    Sleep sleepMonitor = new Sleep(member, pet);
+                    sleepMonitor.monitorResult();
+                    break;
+                case Walk:
+                    Walk walkMonitor = new Walk(member, pet);
+                    walkMonitor.monitorResult();
+                    break;
+                case Groom:
+                    Groom groomMonitor = new Groom(member, pet);
+                    groomMonitor.monitorResult();
+                    break;
+                case Shower:
+                    Shower showerMonitor = new Shower(member, pet);
+                    showerMonitor.monitorResult();
+                    break;
+                case Eat:
+                    Eat eatMonitor = new Eat(member, pet);
+                    eatMonitor.monitorResult();
+                    break;
+                case EarClean:
+                    EarClean earCleanMonitor = new EarClean(member, pet);
+                    earCleanMonitor.monitorResult();
+                    break;
+                case NailCut:
+                    NailCut nailCutMonitor = new NailCut(member, pet);
+                    nailCutMonitor.monitorResult();
+                    break;
+            }
+        }
+    }
 }

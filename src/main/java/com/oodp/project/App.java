@@ -92,6 +92,7 @@ public class App {
 
                                 m.checkIn(m, petID, checkInRepository.getCheckIn_info_list());
 
+
                             } else if (c == '6') {
                                 if (m.getPetList().size() == 0) {
                                     m.viewPetList();
@@ -113,6 +114,18 @@ public class App {
                                 }
 
                             } else if (c == '7') {
+
+//                                 System.out.println("Do you want Monitor Service ? yes(1) no (2)");
+//                                 c = sc.next().charAt(0);
+//                                 if(c == '1'){
+//                                     typeMonitor(check);
+//                                 }
+
+//                                 typeInfo(check);
+//                                 printInfo(check);
+//                             }
+//                             else if(c == '6'){
+
                                 break;
                             }
                         }
@@ -121,5 +134,50 @@ public class App {
             } else break;
         }
     }
+
+
+
+//             switch (c){
+//                 case '1': check.addMonitortype(MonitorType.Sleep); break;
+//                 case '2': check.addMonitortype(MonitorType.Walk); break;
+//                 case '3': check.addMonitortype(MonitorType.Eat); break;
+//                 case '4': check.addMonitortype(MonitorType.Groom); break;
+//                 case '5': check.addMonitortype(MonitorType.Shower); break;
+//                 case '6': check.addMonitortype(MonitorType.EarClean); break;
+//                 case '7': check.addMonitortype(MonitorType.NailCut); break;
+//                 case '0': break;
+
+//             }
+//         }while(c != '0');
+//     }
+//     public static void typeInfo(CheckIn_Info check){
+//         Scanner strSc = new Scanner(System.in);
+//         String str;
+//         System.out.println("Type Start Day (ex: Sat, 02 Apr 2022)");
+//         str = strSc.nextLine();
+//         check.setStartDate(new Date(str));
+//         System.out.println("Type End Day (ex: Sun, 03 Apr 2022)");
+//         str = strSc.nextLine();
+//         check.setEndDate(new Date(str));
+
+//         System.out.println("Requirement : ");
+//         str = strSc.nextLine();
+
+//         check.setRequirement(Arrays.asList(str));
+//     }
+
+//     public static void printInfo(CheckIn_Info check){
+//         System.out.println("------------------------------");
+
+//         System.out.println("PetID : " + check.getPet().getPetID());
+//         System.out.println("PetName : " + check.getPet().getPetName());
+//         System.out.println("MonitorType : " + check.getMonitorTypes());
+//         System.out.println("Start Day : " + check.getStartDate());
+//         System.out.println("End Day : " + check.getEndDate());
+//         System.out.println("Your requirement : " + check.getRequirement());
+//         System.out.println("Total price : " + check.getPrice());
+//         System.out.println("Monitor result : ");
+//         check.printMonitorResult();
+//     }
 
 }
