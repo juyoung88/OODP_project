@@ -96,7 +96,12 @@ public class App {
 
                                 CheckIn_Info check = new CheckIn_Info(m, m.findByPetID(petID), new ArrayList<>(), new ArrayList<>(), 0, new Date(), new Date());
 
-                                typeMonitor(check);
+                                System.out.println("Do you want Monitor Service ? yes(1) no (2)");
+                                c = sc.next().charAt(0);
+                                if(c == '1'){
+                                    typeMonitor(check);
+                                }
+
                                 typeInfo(check);
                                 printInfo(check);
                             }
@@ -156,5 +161,7 @@ public class App {
         System.out.println("End Day : " + check.getEndDate());
         System.out.println("Your requirement : " + check.getRequirement());
         System.out.println("Total price : " + check.getPrice());
+        System.out.println("Monitor result : ");
+        check.printMonitorResult();
     }
 }
