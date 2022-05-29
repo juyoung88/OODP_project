@@ -9,6 +9,7 @@ public class Staff {
     private String role;
     private int salary;
 
+
     public void setStaffID(String staffID) {
         this.staffID = staffID;
     }
@@ -51,5 +52,15 @@ public class Staff {
 
     public void addMember(Member member, MemberRepository memberRepository) {
         memberRepository.save(member);
+    }
+
+    private StaffRole staffRole;
+
+    public void viewStaffRole() {
+        staffRole.viewStaffRole();
+    }
+
+    public void setRole(StaffRole staffRole) {
+        this.staffRole = staffRole;
     }
 }
