@@ -1,4 +1,5 @@
 package com.oodp.project;
 
-public class Monitor {
+public class Monitor{
+
 }

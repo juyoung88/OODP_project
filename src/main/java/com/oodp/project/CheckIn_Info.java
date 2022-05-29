@@ -127,38 +127,44 @@ public class CheckIn_Info {
         }
         return price;
     }
+
+
     public void printMonitorResult() {
         for (MonitorType monitorType : getMonitorTypes()) {
             switch (monitorType) {
                 case Sleep:
-                    Sleep sleepMonitor = new Sleep(member, pet);
-                    sleepMonitor.monitorResult();
+                    SleepFactory sleepFactory = SleepFactory.getInstance();
+                    sleepFactory.getSleep("Sleep", member, pet);
                     break;
                 case Walk:
-                    Walk walkMonitor = new Walk(member, pet);
-                    walkMonitor.monitorResult();
+                    WalkFactory walkFactory = WalkFactory.getInstance();
+                    walkFactory.getWalk("Walk", member, pet);
                     break;
                 case Groom:
-                    Groom groomMonitor = new Groom(member, pet);
-                    groomMonitor.monitorResult();
+                    GroomFactory groomFactory = GroomFactory.getInstance();
+                    groomFactory.getGroom("Groom", member, pet);
                     break;
                 case Shower:
-                    Shower showerMonitor = new Shower(member, pet);
-                    showerMonitor.monitorResult();
+                    ShowerFactory showerFactory = ShowerFactory.getInstance();
+                    showerFactory.getShower("Shower", member, pet);
                     break;
                 case Eat:
-                    Eat eatMonitor = new Eat(member, pet);
-                    eatMonitor.monitorResult();
+                    EatFactory eatFactory = EatFactory.getInstance();
+                    eatFactory.getEat("Eat", member, pet);
                     break;
                 case EarClean:
-                    EarClean earCleanMonitor = new EarClean(member, pet);
-                    earCleanMonitor.monitorResult();
+                    EarCleanFactory earCleanFactory = EarCleanFactory.getInstance();
+                    earCleanFactory.getEarClean("EarClean", member, pet);
                     break;
                 case NailCut:
-                    NailCut nailCutMonitor = new NailCut(member, pet);
-                    nailCutMonitor.monitorResult();
+                    NailCutFactory nailCutFactory = NailCutFactory.getInstance();
+                    nailCutFactory.getNailCut("NailCut", member, pet);
                     break;
             }
         }
+    }
+    public void addWeight(int weight){
+        if(weight > 10) price += 10;
+        else if(weight > 5) price += 5;
     }
 }

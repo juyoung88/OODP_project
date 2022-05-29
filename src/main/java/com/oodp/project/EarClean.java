@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-public class EarClean extends Monitor{
+public class EarClean{
     private Pet pet;
     private Member member;
 

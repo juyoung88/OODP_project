@@ -94,7 +94,7 @@ public class Member {
         if(c == '1'){
             typeMonitor(check);
         }
-
+        typeWeight(check);
         type_checkIn_info(check);
         view_checkIn_info(checkInList, m);
 
@@ -118,6 +118,14 @@ public class Member {
             }
         }
 
+    }
+
+    public static void typeWeight(CheckIn_Info check){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Type your pet's weight(kg)");
+        int weight = sc.nextInt();
+        check.addWeight(weight);
     }
 
     public static void typeMonitor(CheckIn_Info check) {
@@ -192,6 +200,8 @@ public class Member {
                 System.out.println("End Day : " + check.getEndDate());
                 System.out.println("Your requirement : " + check.getRequirement());
                 System.out.println("Total price : " + check.getPrice());
+                System.out.println("monitor result : ");
+                check.printMonitorResult();
             }
         }
         if (!found) {
