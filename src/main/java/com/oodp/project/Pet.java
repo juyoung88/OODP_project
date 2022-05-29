@@ -3,6 +3,15 @@ package com.oodp.project;
 public class Pet {
     private String petID;
     private String petName;
+    private String petType;
+
+    public String getPetType() {
+        return petType;
+    }
+
+    public void setPetType(String petType) {
+        this.petType = petType;
+    }
 
     public String getPetID() {
         return petID;
@@ -35,5 +44,11 @@ public class Pet {
         this.petID = petID;
         this.petName = petName;
         this.monitor = monitor;
+    }
+    public Pet() {
+        super();
+        this.petID=null;
+        this.petName=null;
+        this.monitor=null;
     }
 }

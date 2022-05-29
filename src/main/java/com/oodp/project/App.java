@@ -1,5 +1,6 @@
 package com.oodp.project;
 
+import com.oodp.project.factory.PetFactory;
 import com.oodp.project.repository.CheckInRepository;
 import com.oodp.project.repository.MemberRepository;
 import com.oodp.project.repository.MemoryMemberRepository;
@@ -23,6 +24,7 @@ public class App {
         Staff s = new Staff("1", "admin", "admin", 50000);
         MemberRepository memberRepository = new MemoryMemberRepository();
         CheckInRepository checkInRepository = new CheckInRepository();// repository
+        PetFactory petFactory = new PetFactory();
 
         while (true) {
             System.out.println("---------------------------------------");
@@ -117,9 +119,12 @@ public class App {
                             if (c == '1') {
                                 m.viewPetList();
                             } else if (c == '2') {
+                                System.out.println("Please Enter Your Pet type (Dog, Cat).");
+                                String petType = sc.next();
+                                Pet p = petFactory.getPet(petType);
                                 System.out.println("Please Enter Your Pet name.");
                                 String petName = sc.next();
-                                m.addPetInfo(petName);
+                                m.addPetInfo(p,petName);
                             } else if (c == '3') {
                                 System.out.println("not implemented yet...");
                             } else if (c == '4') {

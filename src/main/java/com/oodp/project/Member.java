@@ -55,6 +55,17 @@ public class Member {
         System.out.println("Pet Info Addition Successful!");
         System.out.println(getMemberID() + "'s new pet : " + p.getPetName());
     }
+    public void addPetInfo(Pet pet, String petName) {
+        int petID = getPetList().size() + 1;
+        pet.setPetID(Integer.toString(petID));
+        pet.setMonitor(new Monitor());
+        pet.setPetName(petName);
+        this.petList.add(pet);
+
+        System.out.println("Pet Info Addition Successful!");
+        System.out.println(getMemberID() + "'s new pet : " + pet.getPetName());
+        System.out.println("petType : " + pet.getPetType());
+    }
 
     public void viewPetList() {
         List<Pet> petList = this.getPetList();

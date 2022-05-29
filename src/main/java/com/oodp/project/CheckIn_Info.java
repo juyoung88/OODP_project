@@ -78,7 +78,13 @@ public class CheckIn_Info {
 
     public int getPrice() {
         calculatePrice();
+        setMemberPoint();
         return price;
+    }
+    public void setMemberPoint() {
+        int point = this.price;
+        point *= 0.07;
+        this.member.setMembershipPoint(point);
     }
 
     public String getStartDate() {
