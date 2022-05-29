@@ -32,22 +32,66 @@ public class App {
             c = sc.next().charAt(0);
 
             if (c == '1') {
-                System.out.println("------------------------------");
-                System.out.println("[ADMIN MODE]");
-                while (true) {
-                    System.out.println("--------------------------------------------------------");
-                    System.out.println("CHOOSE MENU: ADD(1) VIEW(2) EDIT(3) DELETE(4) RETURN(5)");
-                    c = sc.next().charAt(0);
-                    if (c == '1') {
-                        s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
-                        s.addMember(new Member("2", new ArrayList<>(), 0), memberRepository);
-                        s.addMember(new Member("3", new ArrayList<>(), 0), memberRepository);
-                        System.out.println("Member Addition Successful!");
-                    } else if (c == '2') {
-                        memberRepository.showAll();
-                    } else if (c == '5')
-                        break;
+                System.out.println("-------------------------------------------------------");
+                System.out.println("CHOOSE STAFF ROLE: MANAGER(1) PART-TIMER(2) RETURN(3)");
+                System.out.println("-------------------------------------------------------");
+
+                c = sc.next().charAt(0);
+
+                if (c == '1') {
+                    s.setRole(new ManagerRole());
+
+                    System.out.println("--------------");
+                    System.out.println("[MANAGER MODE]");
+                    while (true) {
+                        System.out.println("-------------------------------------------------------------------");
+                        System.out.println("CHOOSE MENU: ADD(1) VIEW(2) EDIT(3) DELETE(4) VIEW ROLE(5) RETURN(6)");
+                        c = sc.next().charAt(0);
+                        if (c == '1') {
+                            s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
+                            s.addMember(new Member("2", new ArrayList<>(), 0), memberRepository);
+                            s.addMember(new Member("3", new ArrayList<>(), 0), memberRepository);
+                            System.out.println("Member Addition Successful!");
+                        } else if (c == '2') {
+                            memberRepository.showAll();
+                        } else if (c == '5') {
+                            s.viewStaffRole();
+                        }
+                        else {
+                            break;
+                        }
+                    }
                 }
+                else if (c == '2') {
+                    s.setRole(new PartTimerRole());
+
+                    System.out.println("----------------");
+                    System.out.println("[PART-TIMER MODE]");
+
+                    while (true) {
+                        System.out.println("-------------------------------------------------------------------");
+                        System.out.println("CHOOSE MENU: ADD(1) VIEW(2) EDIT(3) DELETE(4) VIEW ROLE(5) RETURN(6)");
+                        c = sc.next().charAt(0);
+                        if (c == '1') {
+                            s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
+                            s.addMember(new Member("2", new ArrayList<>(), 0), memberRepository);
+                            s.addMember(new Member("3", new ArrayList<>(), 0), memberRepository);
+                            System.out.println("Member Addition Successful!");
+                        } else if (c == '2') {
+                            memberRepository.showAll();
+                        } else if (c == '5') {
+                            s.viewStaffRole();
+                        }
+                        else {
+                            break;
+                        }
+                    }
+
+                }
+                else {
+                    break;
+                }
+
             } else if (c == '2') {
 
                 System.out.println("[MEMBER MODE]");
@@ -64,7 +108,7 @@ public class App {
 //                        System.out.println("getMemberID(): " + m.getMemberID());
                         while (true) {
                             System.out.println("---------------------------");
-                            System.out.println("CHOOSE MENU:\n1. SHOW PET LIST\n2. ADD PET INFO\n3. EDIT PET INFO\n4. DELETE PET INFO\n5. CHECK_IN\n6. CHECK_OUT\n7. RETURN");
+                            System.out.println("CHOOSE MENU:\n1. SHOW PET LIST\n2. ADD PET INFO\n3. EDIT PET INFO\n4. DELETE PET INFO\n5. CHECK_IN\n6. CHECK_OUT\n7. VIEW CHECK_IN LIST\n8. RETURN");
                             c = sc.next().charAt(0);
                             if (c == '1') {
                                 m.viewPetList();
@@ -92,7 +136,6 @@ public class App {
 
                                 m.checkIn(m, petID, checkInRepository.getCheckIn_info_list());
 
-
                             } else if (c == '6') {
                                 if (m.getPetList().size() == 0) {
                                     m.viewPetList();
@@ -110,31 +153,21 @@ public class App {
                                     // TODO: check out
                                     m.checkOut(m, petID, checkInRepository.getCheckIn_info_list());
 
-                                    m.view_checkIn_info(checkInRepository.getCheckIn_info_list(), m);
+//                                    m.view_checkIn_info(checkInRepository.getCheckIn_info_list(), m);
                                 }
 
                             } else if (c == '7') {
 
-//                                 System.out.println("Do you want Monitor Service ? yes(1) no (2)");
-//                                 c = sc.next().charAt(0);
-//                                 if(c == '1'){
-//                                     typeMonitor(check);
-//                                 }
-
-//                                 typeInfo(check);
-//                                 printInfo(check);
-//                             }
-//                             else if(c == '6'){
-
-                                break;
+                                m.view_checkIn_info(checkInRepository.getCheckIn_info_list(), m);
                             }
+                            else
+                                break;
                         }
                     }
                 }
             } else break;
         }
     }
-
 
 
 //             switch (c){
