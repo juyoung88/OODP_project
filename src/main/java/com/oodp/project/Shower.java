@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-public class Shower extends Monitor{
+public class Shower{
     private Pet pet;
     private Member member;
 

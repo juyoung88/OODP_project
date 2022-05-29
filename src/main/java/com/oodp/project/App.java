@@ -153,7 +153,7 @@ public class App {
                                     // TODO: check out
                                     m.checkOut(m, petID, checkInRepository.getCheckIn_info_list());
 
-//                                    m.view_checkIn_info(checkInRepository.getCheckIn_info_list(), m);
+//                                  m.view_checkIn_info(checkInRepository.getCheckIn_info_list(), m);
                                 }
 
                             } else if (c == '7') {
