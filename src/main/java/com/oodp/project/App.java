@@ -45,7 +45,7 @@ public class App {
                     System.out.println("[MANAGER MODE]");
                     while (true) {
                         System.out.println("-------------------------------------------------------------------");
-                        System.out.println("CHOOSE MENU: ADD(1) VIEW(2) EDIT(3) DELETE(4) VIEW ROLE(5) RETURN(6)");
+                        System.out.println("CHOOSE MENU: ADD(1) VIEW(2) EDIT(3) DELETE(4) VIEW ROLE(5) CALCULATE SALARY(6) RETURN(7)");
                         c = sc.next().charAt(0);
                         if (c == '1') {
                             s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
@@ -56,6 +56,8 @@ public class App {
                             memberRepository.showAll();
                         } else if (c == '5') {
                             s.viewStaffRole();
+                        } else if (c == '6') {
+                            s.calculateStaffSalary();
                         }
                         else {
                             break;
@@ -70,7 +72,7 @@ public class App {
 
                     while (true) {
                         System.out.println("-------------------------------------------------------------------");
-                        System.out.println("CHOOSE MENU: ADD(1) VIEW(2) EDIT(3) DELETE(4) VIEW ROLE(5) RETURN(6)");
+                        System.out.println("CHOOSE MENU: ADD(1) VIEW(2) EDIT(3) DELETE(4) VIEW ROLE(5) CALCULATE SALARY(6) RETURN(7)");
                         c = sc.next().charAt(0);
                         if (c == '1') {
                             s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
@@ -81,6 +83,8 @@ public class App {
                             memberRepository.showAll();
                         } else if (c == '5') {
                             s.viewStaffRole();
+                        } else if (c == '6') {
+                            s.calculateStaffSalary();
                         }
                         else {
                             break;

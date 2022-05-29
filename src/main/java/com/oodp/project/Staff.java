@@ -1,7 +1,6 @@
 package com.oodp.project;
 
 import com.oodp.project.repository.MemberRepository;
-import com.oodp.project.repository.MemoryMemberRepository;
 
 public class Staff {
     private String staffID;
@@ -59,6 +58,8 @@ public class Staff {
     public void viewStaffRole() {
         staffRole.viewStaffRole();
     }
+
+    public void calculateStaffSalary() {staffRole.calculateStaffSalary();}
 
     public void setRole(StaffRole staffRole) {
         this.staffRole = staffRole;
