@@ -1,11 +1,11 @@
 package com.oodp.project;
 
-public class Groom {
+public class Groom extends Monitor{
     private Pet pet;
     private Member member;
 
     public Groom (Member member, Pet pet){
-        super();
+        super(member, pet);
         this.member = member;
         this.pet = pet;
     }

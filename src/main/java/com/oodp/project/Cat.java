@@ -31,21 +31,11 @@ public class Cat extends Pet{
         super.setPetName(petName);
     }
 
-    @Override
-    public Monitor getMonitor() {
-        return super.getMonitor();
-    }
-
-    @Override
-    public void setMonitor(Monitor monitor) {
-        super.setMonitor(monitor);
-    }
-
     public Cat() {
         super();
     }
 
-    public Cat(String petID, String petName, Monitor monitor) {
-        super(petID, petName, monitor);
+    public Cat(String petID, String petName) {
+        super(petID, petName);
     }
 }

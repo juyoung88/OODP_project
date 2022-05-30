@@ -3,8 +3,8 @@ package com.oodp.project;
 import java.util.HashMap;
 
 public class SleepFactory {
-    private HashMap pool = new HashMap();
-    private static SleepFactory singleton = new SleepFactory();
+    private final HashMap pool = new HashMap();
+    private static final SleepFactory singleton = new SleepFactory();
     private SleepFactory(){
     }
     public static SleepFactory getInstance(){

@@ -1,11 +1,11 @@
 package com.oodp.project;
 
-public class NailCut {
+public class NailCut extends Monitor{
     private Pet pet;
     private Member member;
 
     public NailCut(Member member, Pet pet){
-        super();
+        super(member, pet);
         this.member = member;
         this.pet = pet;
     }

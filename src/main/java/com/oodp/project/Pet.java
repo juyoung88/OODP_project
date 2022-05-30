@@ -29,26 +29,27 @@ public class Pet {
         this.petName = petName;
     }
 
-    public Monitor getMonitor() {
-        return monitor;
-    }
+//    public Monitor getMonitor() {
+//        return monitor;
+//    }
 
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
-    }
+    //public void setMonitor(Monitor monitor) {
+//        this.monitor = monitor;
+//    }
 
-    private Monitor monitor;
+    //private Monitor monitor;
 
-    public Pet(String petID, String petName, Monitor monitor) {
+//    public Pet(String petID, String petName, Monitor monitor) {
+    public Pet(String petID, String petName) {
         super();
         this.petID = petID;
         this.petName = petName;
-        this.monitor = monitor;
+        //this.monitor = monitor;
     }
     public Pet() {
         super();
         this.petID=null;
         this.petName=null;
-        this.monitor=null;
+        //this.monitor=null;
     }
 }

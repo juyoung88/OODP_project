@@ -47,9 +47,8 @@ public class Member {
 
 
     public void addPetInfo(String petName) {
-        Monitor m = new Monitor();
         int petID = getPetList().size() + 1;
-        Pet p = new Pet(Integer.toString(petID), petName, m);
+        Pet p = new Pet(Integer.toString(petID), petName);
         this.petList.add(p);
 
         System.out.println("Pet Info Addition Successful!");
@@ -58,7 +57,6 @@ public class Member {
     public void addPetInfo(Pet pet, String petName) {
         int petID = getPetList().size() + 1;
         pet.setPetID(Integer.toString(petID));
-        pet.setMonitor(new Monitor());
         pet.setPetName(petName);
         this.petList.add(pet);
 
@@ -91,8 +89,7 @@ public class Member {
 
         }
         System.out.println("The petID does not exist. Please try again.");
-        Monitor m = new Monitor();
-        return new Pet("0", "", m);
+        return new Pet("0", "");
     }
 
     public void checkIn(Member m, String petID, List<CheckIn_Info> checkInList) {
@@ -107,8 +104,6 @@ public class Member {
         }
         typeWeight(check);
         type_checkIn_info(check);
-        view_checkIn_info(checkInList, m);
-
         // repository 에 저장
         checkInList.add(check);
 //        System.out.println("saving in checkInList successful!");

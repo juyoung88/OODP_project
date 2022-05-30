@@ -3,8 +3,8 @@ package com.oodp.project;
 import java.util.HashMap;
 
 public class GroomFactory {
-    private HashMap pool = new HashMap();
-    private static GroomFactory singleton = new GroomFactory();
+    private final HashMap pool = new HashMap();
+    private static final GroomFactory singleton = new GroomFactory();
     private GroomFactory(){
     }
     public static GroomFactory getInstance(){
