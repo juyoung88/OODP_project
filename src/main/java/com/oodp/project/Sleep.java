@@ -1,11 +1,11 @@
 package com.oodp.project;
 
-public class Sleep {
+public class Sleep extends Monitor{
     private Pet pet;
     private Member member;
 
     public Sleep(Member member, Pet pet){
-        super();
+        super(member, pet);
         this.member = member;
         this.pet = pet;
     }

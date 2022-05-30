@@ -3,8 +3,8 @@ package com.oodp.project;
 import java.util.HashMap;
 
 public class ShowerFactory {
-    private HashMap pool = new HashMap();
-    private static ShowerFactory singleton = new ShowerFactory();
+    private final HashMap pool = new HashMap();
+    private static final ShowerFactory singleton = new ShowerFactory();
     private ShowerFactory(){
     }
     public static ShowerFactory getInstance(){

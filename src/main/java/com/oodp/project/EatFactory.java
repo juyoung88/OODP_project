@@ -3,8 +3,8 @@ package com.oodp.project;
 import java.util.HashMap;
 
 public class EatFactory {
-    private HashMap pool = new HashMap();
-    private static EatFactory singleton = new EatFactory();
+    private final HashMap pool = new HashMap();
+    private static final EatFactory singleton = new EatFactory();
     private EatFactory(){
     }
     public static EatFactory getInstance(){

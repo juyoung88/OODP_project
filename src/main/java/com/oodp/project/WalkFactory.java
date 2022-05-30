@@ -3,8 +3,8 @@ package com.oodp.project;
 import java.util.HashMap;
 
 public class WalkFactory {
-    private HashMap pool = new HashMap();
-    private static WalkFactory singleton = new WalkFactory();
+    private final HashMap pool = new HashMap();
+    private static final WalkFactory singleton = new WalkFactory();
     private WalkFactory(){
     }
     public static WalkFactory getInstance(){

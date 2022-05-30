@@ -1,11 +1,12 @@
 package com.oodp.project;
 
-public class EarClean{
+
+public class EarClean extends Monitor{
     private Pet pet;
     private Member member;
 
     public EarClean(Member member, Pet pet){
-        super();
+        super(member, pet);
         this.member = member;
         this.pet = pet;
     }

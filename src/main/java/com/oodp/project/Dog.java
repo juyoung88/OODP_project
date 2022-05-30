@@ -21,11 +21,6 @@ public class Dog extends Pet{
         super.setPetName(petName);
     }
 
-    @Override
-    public Monitor getMonitor() {
-        return super.getMonitor();
-    }
-
     public Dog() {
         super();
     }
@@ -40,13 +35,8 @@ public class Dog extends Pet{
         super.setPetType(petType);
     }
 
-    @Override
-    public void setMonitor(Monitor monitor) {
-        super.setMonitor(monitor);
-    }
-
-    public Dog(String petID, String petName, Monitor monitor) {
-        super(petID, petName, monitor);
+    public Dog(String petID, String petName) {
+        super(petID, petName);
     }
 
 }

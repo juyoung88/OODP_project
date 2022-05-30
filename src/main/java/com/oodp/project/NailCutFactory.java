@@ -3,8 +3,8 @@ package com.oodp.project;
 import java.util.HashMap;
 
 public class NailCutFactory {
-    private HashMap pool = new HashMap();
-    private static NailCutFactory singleton = new NailCutFactory();
+    private final HashMap pool = new HashMap();
+    private static final NailCutFactory singleton = new NailCutFactory();
     private NailCutFactory(){
     }
     public static NailCutFactory getInstance(){

@@ -3,8 +3,8 @@ package com.oodp.project;
 import java.util.HashMap;
 
 public class EarCleanFactory {
-    private HashMap pool = new HashMap();
-    private static EarCleanFactory singleton = new EarCleanFactory();
+    private final HashMap pool = new HashMap();
+    private static final EarCleanFactory singleton = new EarCleanFactory();
     private EarCleanFactory(){
     }
     public static EarCleanFactory getInstance(){
