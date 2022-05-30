@@ -136,7 +136,6 @@ public class CheckIn_Info {
 
 
     public void printMonitorResult() {
-        EarCleanFactory earCleanFactory = EarCleanFactory.getInstance();
         for (MonitorType monitorType : getMonitorTypes()) {
             switch (monitorType) {
                 case Sleep:
@@ -160,13 +159,12 @@ public class CheckIn_Info {
                     eatFactory.getEat("Eat", member, pet);
                     break;
                 case EarClean:
-//                    EarCleanFactory earCleanFactory = EarCleanFactory.getInstance();
+                    EarCleanFactory earCleanFactory = EarCleanFactory.getInstance();
                     earCleanFactory.getEarClean("EarClean", member, pet);
                     break;
                 case NailCut:
-//                    NailCutFactory nailCutFactory = NailCutFactory.getInstance();
-//                    nailCutFactory.getNailCut("NailCut", member, pet);
-                    earCleanFactory.getEarClean("NailCut", member, pet);
+                    NailCutFactory nailCutFactory = NailCutFactory.getInstance();
+                    nailCutFactory.getNailCut("NailCut", member, pet);
                     break;
             }
         }
