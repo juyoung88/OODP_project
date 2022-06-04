@@ -17,8 +17,8 @@ public class CheckIn_Info {
     private int price = 0;
     private Date startDate;
     private Date endDate;
-    private Pet pet;
-    private Member member;
+    private Pet pet;    private Member member;
+
 
 
     public CheckIn_Info(Member member, Pet pet, List<MonitorType> monitorTypes, List<String> requirement, int price, Date startDate, Date endDate) {
@@ -55,6 +55,7 @@ public class CheckIn_Info {
     public void setPrice(int price) {
         this.price = price;
     }
+
 
     public Pet getPet() {
         return pet;
@@ -139,32 +140,32 @@ public class CheckIn_Info {
         for (MonitorType monitorType : getMonitorTypes()) {
             switch (monitorType) {
                 case Sleep:
-                    SleepFactory sleepFactory = SleepFactory.getInstance();
-                    sleepFactory.getSleep("Sleep", member, pet);
+                    Sleep sleep = Sleep.getSleep();
+                    sleep.monitorResult();
                     break;
                 case Walk:
-                    WalkFactory walkFactory = WalkFactory.getInstance();
-                    walkFactory.getWalk("Walk", member, pet);
+                    Walk walk = Walk.getWalk();
+                    walk.monitorResult();
                     break;
                 case Groom:
-                    GroomFactory groomFactory = GroomFactory.getInstance();
-                    groomFactory.getGroom("Groom", member, pet);
+                    Groom groom = Groom.getGroom();
+                    groom.monitorResult();
                     break;
                 case Shower:
-                    ShowerFactory showerFactory = ShowerFactory.getInstance();
-                    showerFactory.getShower("Shower", member, pet);
+                      Shower shower = Shower.getShower();
+                      shower.monitorResult();
                     break;
                 case Eat:
-                    EatFactory eatFactory = EatFactory.getInstance();
-                    eatFactory.getEat("Eat", member, pet);
+                    Eat eat = Eat.getEat();
+                    eat.monitorResult();
                     break;
                 case EarClean:
-                    EarCleanFactory earCleanFactory = EarCleanFactory.getInstance();
-                    earCleanFactory.getEarClean("EarClean", member, pet);
+                    EarClean earClean = EarClean.getEarClean();
+                    earClean.monitorResult();
                     break;
                 case NailCut:
-                    NailCutFactory nailCutFactory = NailCutFactory.getInstance();
-                    nailCutFactory.getNailCut("NailCut", member, pet);
+                    NailCut nailCut = NailCut.getNailCut();
+                    nailCut.monitorResult();
                     break;
             }
         }
