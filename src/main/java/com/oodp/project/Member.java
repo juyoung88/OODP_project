@@ -206,8 +206,8 @@ public class Member {
                 System.out.println("End Day : " + check.getEndDate());
                 System.out.println("Your requirement : " + check.getRequirement());
                 System.out.println("Total price : " + check.getPrice());
+                System.out.println("Membership point : " + m.getMembershipPoint());
                 System.out.println("monitor result : ");
-                check.printMonitorResult();
             }
         }
         if (!found) {
