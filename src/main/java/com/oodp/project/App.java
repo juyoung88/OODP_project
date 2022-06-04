@@ -179,6 +179,7 @@ public class App {
     }
 
 
+
 //             switch (c){
 //                 case '1': check.addMonitortype(MonitorType.Sleep); break;
 //                 case '2': check.addMonitortype(MonitorType.Walk); break;

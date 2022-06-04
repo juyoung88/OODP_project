@@ -9,6 +9,7 @@ public class Staff {
     private int salary;
 
 
+
     public void setStaffID(String staffID) {
         this.staffID = staffID;
     }

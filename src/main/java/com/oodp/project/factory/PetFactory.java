@@ -16,7 +16,8 @@ public class PetFactory {
         if(petType.equalsIgnoreCase("CAT")){
             Pet pet = new Cat();
             pet.setPetType("Cat");
-            return new Cat();
+
+            return pet;
         }
         return null;
     }

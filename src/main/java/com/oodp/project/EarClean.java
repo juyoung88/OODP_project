@@ -1,34 +1,20 @@
 package com.oodp.project;
 
-
 public class EarClean extends Monitor{
-    private Pet pet;
-    private Member member;
+    private static EarClean earClean = null;
 
-    public EarClean(Member member, Pet pet){
-        super(member, pet);
-        this.member = member;
-        this.pet = pet;
-    }
+    private EarClean(){}
 
-    public Member getMember(){
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public static EarClean getEarClean(){
+        if(earClean == null){
+            earClean = new EarClean();
+        }
+        return earClean;
     }
 
     public void monitorResult() {
         System.out.println("    EarClean Service is Completed!");
     }
+
 
 }

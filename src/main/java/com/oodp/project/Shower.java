@@ -1,33 +1,21 @@
 package com.oodp.project;
 
 public class Shower extends Monitor{
-    private Pet pet;
-    private Member member;
+    private static Shower shower = null;
 
-    public Shower(Member member, Pet pet){
-        super(member, pet);
-        this.member = member;
-        this.pet = pet;
-    }
+    private Shower(){}
 
-    public Member getMember(){
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public static Shower getShower(){
+        if(shower == null){
+            shower = new Shower();
+        }
+        System.out.println(shower);
+        return shower;
     }
 
     public void monitorResult() {
         System.out.println("    Shower Service is Completed!");
     }
+
 
 }
