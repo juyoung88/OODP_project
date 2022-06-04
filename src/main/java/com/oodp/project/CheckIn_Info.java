@@ -56,6 +56,7 @@ public class CheckIn_Info {
         this.price = price;
     }
 
+
     public Pet getPet() {
         return pet;
     }

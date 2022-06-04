@@ -23,4 +23,5 @@ public class MemoryMemberRepository implements MemberRepository {
     public Member findById(String memberID) {
         return store.get(memberID);
     }
+
 }

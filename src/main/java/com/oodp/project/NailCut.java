@@ -16,4 +16,6 @@ public class NailCut extends Monitor{
         System.out.println("    NailCut Service is Completed!");
     }
 
+
 }
+

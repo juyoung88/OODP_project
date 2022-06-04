@@ -18,4 +18,5 @@ public class PartTimerRole implements StaffRole{
         salary = Integer.parseInt(hour) * 9500;
         System.out.println("Your salary is " + salary + " won.");
     }
+
 }

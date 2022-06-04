@@ -16,4 +16,5 @@ public class CheckInRepository {
 
     private List<CheckIn_Info> checkIn_info_list = new ArrayList<>();
 
+
 }

@@ -208,6 +208,7 @@ public class Member {
                 System.out.println("Total price : " + check.getPrice());
                 System.out.println("Membership point : " + m.getMembershipPoint());
                 System.out.println("monitor result : ");
+                check.printMonitorResult();
             }
         }
         if (!found) {
