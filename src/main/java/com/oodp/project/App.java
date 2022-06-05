@@ -25,6 +25,8 @@ public class App {
         MemberRepository memberRepository = new MemoryMemberRepository();
         CheckInRepository checkInRepository = new CheckInRepository();// repository
         PetFactory petFactory = new PetFactory();
+        Member_Group member_group = new Member_Group(5);
+
 
         while (true) {
             System.out.println("---------------------------------------");
@@ -53,6 +55,17 @@ public class App {
                             s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
                             s.addMember(new Member("2", new ArrayList<>(), 0), memberRepository);
                             s.addMember(new Member("3", new ArrayList<>(), 0), memberRepository);
+                            member_group.AddMember(new Member("1", new ArrayList<>(), 0));
+                            member_group.AddMember(new Member("2", new ArrayList<>(), 0));
+                            member_group.AddMember(new Member("3", new ArrayList<>(), 0));
+
+                            MemberGroupIterator member_iterator = member_group.iterator();
+                            while(member_iterator.hasNext()){
+                                Member member = (Member)member_iterator.next();
+                                System.out.println("(test) Member ID : " + member.getMemberID());
+                                System.out.println("(test) Member point : " + member.getMembershipPoint());
+                            }
+
                             System.out.println("Member Addition Successful!");
                         } else if (c == '2') {
                             memberRepository.showAll();
@@ -80,6 +93,18 @@ public class App {
                             s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
                             s.addMember(new Member("2", new ArrayList<>(), 0), memberRepository);
                             s.addMember(new Member("3", new ArrayList<>(), 0), memberRepository);
+
+//                            member_group.AddMember(new Member("1", new ArrayList<>(), 0));
+//                            member_group.AddMember(new Member("2", new ArrayList<>(), 0));
+//                            member_group.AddMember(new Member("3", new ArrayList<>(), 0));
+
+//                            MemberGroupIterator member_iterator = member_group.iterator();
+//                            while(member_iterator.hasNext()){
+//                                Member member = (Member)member_iterator.next();
+//                                System.out.println("(test) Member ID : " + member.getMemberID());
+//                                System.out.println("(test) Member point : " + member.getMembershipPoint());
+//                            }
+
                             System.out.println("Member Addition Successful!");
                         } else if (c == '2') {
                             memberRepository.showAll();
@@ -125,6 +150,8 @@ public class App {
                                 System.out.println("Please Enter Your Pet name.");
                                 String petName = sc.next();
                                 m.addPetInfo(p,petName);
+                                member_group.AddMember(m);
+
                             } else if (c == '3') {
                                 System.out.println("not implemented yet...");
                             } else if (c == '4') {

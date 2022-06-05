@@ -94,6 +94,10 @@ public class Member {
 
     public void checkIn(Member m, String petID, List<CheckIn_Info> checkInList) {
         CheckIn_Info check = new CheckIn_Info(m, m.findByPetID(petID), new ArrayList<>(), new ArrayList<>(), 0, new Date(), new Date());
+        CheckIn_Group checkIn_group = new CheckIn_Group(5);
+        checkIn_group.AddCheckIn_Info(new CheckIn_Info(m, m.findByPetID(petID), new ArrayList<>(), new ArrayList<>(), 0, new Date(), new Date()));
+
+        CheckInIterator checkIn_iterator = checkIn_group.iterator();
 
         Scanner sc = new Scanner(System.in);
 
@@ -107,6 +111,11 @@ public class Member {
         // repository 에 저장
         checkInList.add(check);
 //        System.out.println("saving in checkInList successful!");
+        while(checkIn_iterator.hasNext()){
+            CheckIn_Info checkIn_info = (CheckIn_Info)checkIn_iterator.next();
+            System.out.println("(test) Member : " + checkIn_info.getMember().getMemberID());
+            System.out.println("(test) Pet: " + checkIn_info.getPet().getPetName());
+        }
 
         view_checkIn_info(checkInList, m);
 
