@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-public class Walk extends Monitor{
+public class Walk implements Monitor{
     private static Walk walk = null;
 
     private Walk(){}

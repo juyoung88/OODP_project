@@ -1,5 +1,7 @@
 package com.oodp.project;
 
+import java.util.ArrayList;
+
 public class Cat extends Pet{
     @Override
     public String getPetType() {
@@ -36,6 +38,6 @@ public class Cat extends Pet{
     }
 
     public Cat(String petID, String petName) {
-        super(petID, petName);
+        super(petID, petName, new ArrayList<>());
     }
 }

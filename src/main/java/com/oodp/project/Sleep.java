@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-public class Sleep extends Monitor{
+public class Sleep implements Monitor{
     private static Sleep sleep = null;
 
     private Sleep(){}

@@ -91,7 +91,6 @@ public class Staff {
                         break;
                     else {
                         Pet pet = member.findByPetID(petID);
-                        Monitor m = new Monitor();
                         String monitoring;
                         String str2;
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");

@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-public class NailCut extends Monitor{
+public class NailCut implements Monitor{
     private static NailCut nailCut = null;
 
     private NailCut(){}

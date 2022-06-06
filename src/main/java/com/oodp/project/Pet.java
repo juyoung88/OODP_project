@@ -5,8 +5,6 @@ import java.util.List;
 public class Pet {
     private String petID;
     private String petName;
-
-    
     private List<String> monitorResult;
 
     private String petType;
