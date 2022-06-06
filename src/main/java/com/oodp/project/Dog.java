@@ -37,9 +37,9 @@ public class Dog extends Pet{
         super.setPetType(petType);
     }
 
-    public Dog(String petID, String petName) {
-        super(petID, petName,new ArrayList<>());
-    }
+//    public Dog(String petID, String petName) {
+//        super(petID, petName,new ArrayList<>());
+//    }
 
 
 }
