@@ -77,7 +77,7 @@ public class Member {
 
             System.out.println("<petID>  \t<petName>  \t< monitor> ");
             for (int i = 0; i < petList.size(); i++) {
-                // TODO: monitor 정보 출력
+                // TODO: monitor info print
                 System.out.println("   " + petList.get(i).getPetID() + "\t\t  " + petList.get(i).getPetName());
             }
         }
@@ -109,7 +109,7 @@ public class Member {
         }
         typeWeight(check);
         type_checkIn_info(check);
-        // repository 에 저장
+        // save in repository
         checkInList.add(check);
 //        System.out.println("saving in checkInList successful!");
         while(checkIn_iterator.hasNext()){

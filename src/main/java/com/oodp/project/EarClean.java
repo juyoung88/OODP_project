@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-public class EarClean extends Monitor{
+public class EarClean implements Monitor{
     private static EarClean earClean = null;
 
     private EarClean(){}

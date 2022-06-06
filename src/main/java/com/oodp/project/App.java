@@ -26,6 +26,7 @@ public class App {
         CheckInRepository checkInRepository = new CheckInRepository();// repository
         PetFactory petFactory = new PetFactory();
         Member_Group member_group = new Member_Group(5);
+        Staff_Group staff_group = new Staff_Group(5);
 
 
         while (true) {
@@ -50,7 +51,7 @@ public class App {
                     while (true) {
                         System.out.println("-------------------------------------------------------------------");
                         System.out.println("CHOOSE MENU: ADD MEMBER(1) VIEW MEMBER(2) EDIT(3) DELETE(4)\n" +
-                                "VIEW ROLE(5) CALCULATE SALARY(6) MONITOR(7) RETURN(8)");
+                                "VIEW ROLE(5) CALCULATE SALARY(6) MONITOR(7) ADD STAFF(8) VIEW STAFF(9) RETURN(Q)");
                         c = sc.next().charAt(0);
                         if (c == '1') {
                             s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
@@ -66,7 +67,6 @@ public class App {
                                 System.out.println("(test) Member ID : " + member.getMemberID());
                                 System.out.println("(test) Member point : " + member.getMembershipPoint());
                             }
-
                             System.out.println("Member Addition Successful!");
                         } else if (c == '2') {
                             memberRepository.showAll();
@@ -76,6 +76,19 @@ public class App {
                             s.calculateStaffSalary();
                         } else if (c == '7') {
                             s.monitor();
+                        } else if(c == '8') {
+                            staff_group.AddStaff(new Staff("2","A","part_time",50000));
+                            staff_group.AddStaff(new Staff("3","B","part_time",50000));
+                            staff_group.AddStaff(new Staff("4","C","part_time",50000));
+                            System.out.println("Staff addition complete!");
+                        } else if(c=='9') {
+                            StaffIterator staffIterator = new StaffIterator(staff_group);
+                            while(staffIterator.hasNext()) {
+                                Staff staff = (Staff)staffIterator.next();
+                                System.out.println("staff ID = " + staff.getStaffID());
+                                System.out.println("staff Name = " + staff.getStaffName());
+                                System.out.println("staff Role = " + staff.getRole());
+                            }
                         }
                         else {
                             break;

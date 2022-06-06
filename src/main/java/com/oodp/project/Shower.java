@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-public class Shower extends Monitor{
+public class Shower implements Monitor{
     private static Shower shower = null;
 
     private Shower(){}

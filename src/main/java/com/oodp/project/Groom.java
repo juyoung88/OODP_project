@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-public class Groom extends Monitor{
+public class Groom implements Monitor{
     private static Groom groom = null;
 
     private Groom(){}

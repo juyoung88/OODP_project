@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-public class Eat extends Monitor{
+public class Eat implements Monitor{
     private static Eat eat = null;
 
     private Eat(){}

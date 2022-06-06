@@ -14,7 +14,7 @@ public class PartTimerRole implements StaffRole{
         System.out.print("Enter the hours you worked: ");
         String hour = sc.next();
 
-        // 월급 계산식
+        // salary calculation
         salary = Integer.parseInt(hour) * 9500;
         System.out.println("Your salary is " + salary + " won.");
     }
