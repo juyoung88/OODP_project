@@ -1,7 +1,5 @@
 package com.oodp.project;
 
-import com.oodp.project.repository.CheckInRepository;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -48,7 +46,9 @@ public class Member {
 
     public void addPetInfo(String petName) {
         int petID = getPetList().size() + 1;
-        Pet p = new Pet(Integer.toString(petID), petName);
+        List<String> monitorResult = new ArrayList<>();
+        Pet p = new Pet(Integer.toString(petID), petName, monitorResult);
+
         this.petList.add(p);
 
         System.out.println("Pet Info Addition Successful!");
@@ -69,7 +69,7 @@ public class Member {
         List<Pet> petList = this.getPetList();
         Iterator iterator = petList.iterator();
         System.out.println("------------------------------");
-        System.out.println("petList.size() : " + petList.size());
+//        System.out.println("petList.size() : " + petList.size());
         if (petList.size() == 0)
             System.out.println("Your Pet List is Empty! Please Add Your Pet Info First :)");
         else {
@@ -89,7 +89,8 @@ public class Member {
 
         }
         System.out.println("The petID does not exist. Please try again.");
-        return new Pet("0", "");
+        List<String> monitorResult = new ArrayList<>();
+        return new Pet("0", "", monitorResult);
     }
 
     public void checkIn(Member m, String petID, List<CheckIn_Info> checkInList) {
@@ -226,6 +227,33 @@ public class Member {
 
         return found;
 
+
+    }
+
+    public void viewMonitorResult() {
+
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            viewPetList();
+
+            System.out.println("> Enter your pet's ID (r: return)");
+            String petID = sc.next();
+            if (petID.equals("r"))
+                break;
+            else {
+                Pet pet = findByPetID(petID);
+
+                if(pet.getMonitorResult().size() == 0) {
+                    System.out.println("Sorry! There's no monitor result yet!");
+                }
+                else {
+                    System.out.println("------" + pet.getPetName() + "\'s Monitor Result------");
+                    for (int i = 0; i < pet.getMonitorResult().size(); i++) {
+                        System.out.println(pet.getMonitorResult().get(i));
+                    }
+                }
+            }
+        }
 
     }
 
