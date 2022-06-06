@@ -1,14 +1,12 @@
 package com.oodp.project;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pet {
     private String petID;
     private String petName;
-
-    
     private List<String> monitorResult;
-
     private String petType;
 
     public String getPetType() {
@@ -37,13 +35,12 @@ public class Pet {
     }
 
 
-
     public List<String> getMonitorResult() {
-        return monitorResult;
-    }
+            return monitorResult;
+        }
 
-    public void setMonitorResult(List<String> monitorResult) {
-        this.monitorResult = monitorResult;
+        public void setMonitorResult(List<String> monitorResult) {
+            this.monitorResult = monitorResult;
     }
 
     public Pet(String petID, String petName,List<String> monitorResult) {
@@ -57,6 +54,7 @@ public class Pet {
         super();
         this.petID=null;
         this.petName=null;
+        this.monitorResult= new ArrayList<>();
     }
 
 }

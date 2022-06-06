@@ -91,7 +91,6 @@ public class Staff {
                         break;
                     else {
                         Pet pet = member.findByPetID(petID);
-                        Monitor m = new Monitor();
                         String monitoring;
                         String str2;
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
@@ -107,6 +106,7 @@ public class Staff {
                                     System.out.println("> Enter how much pet slept (hours) ");
                                     monitoring = sc.next();
                                     str2 = "Sleep: " + monitoring + " hours [" + LocalDate.now().format(formatter) + "]";
+                                    System.out.println(str2);
                                     pet.getMonitorResult().add(str2);
                                     break;
                                 case '2':
