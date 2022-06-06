@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Cat extends Pet{
     @Override
@@ -33,11 +33,21 @@ public class Cat extends Pet{
         super.setPetName(petName);
     }
 
+    @Override
+    public List<String> getMonitorResult() {
+        return super.getMonitorResult();
+    }
+
+    @Override
+    public void setMonitorResult(List<String> monitorResult) {
+        super.setMonitorResult(monitorResult);
+    }
+
     public Cat() {
         super();
     }
 
-//    public Cat(String petID, String petName) {
-//        super(petID, petName, new ArrayList<>());
-//    }
+    public Cat(String petID, String petName, List<String> monitorResult) {
+        super(petID, petName, monitorResult);
+    }
 }

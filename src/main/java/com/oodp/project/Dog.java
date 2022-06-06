@@ -1,6 +1,6 @@
 package com.oodp.project;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Dog extends Pet{
     @Override
@@ -37,9 +37,20 @@ public class Dog extends Pet{
         super.setPetType(petType);
     }
 
-//    public Dog(String petID, String petName) {
-//        super(petID, petName,new ArrayList<>());
-//    }
+    @Override
+    public List<String> getMonitorResult() {
+        return super.getMonitorResult();
+    }
+
+    @Override
+    public void setMonitorResult(List<String> monitorResult) {
+        super.setMonitorResult(monitorResult);
+    }
+
+
+    public Dog(String petID, String petName, List<String> monitorResult) {
+        super(petID, petName, monitorResult);
+    }
 
 
 }
