@@ -1,5 +1,6 @@
 package com.oodp.project;
 
+import com.oodp.project.factory.PetFactory;
 import com.oodp.project.repository.CheckInRepository;
 import com.oodp.project.repository.MemberRepository;
 import com.oodp.project.repository.MemoryMemberRepository;
@@ -23,6 +24,9 @@ public class App {
         Staff s = new Staff("1", "admin", "admin", 50000);
         MemberRepository memberRepository = new MemoryMemberRepository();
         CheckInRepository checkInRepository = new CheckInRepository();// repository
+        PetFactory petFactory = new PetFactory();
+        Member_Group member_group = new Member_Group(5);
+
 
         while (true) {
             System.out.println("---------------------------------------");
@@ -52,6 +56,17 @@ public class App {
                             s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
                             s.addMember(new Member("2", new ArrayList<>(), 0), memberRepository);
                             s.addMember(new Member("3", new ArrayList<>(), 0), memberRepository);
+                            member_group.AddMember(new Member("1", new ArrayList<>(), 0));
+                            member_group.AddMember(new Member("2", new ArrayList<>(), 0));
+                            member_group.AddMember(new Member("3", new ArrayList<>(), 0));
+
+                            MemberGroupIterator member_iterator = member_group.iterator();
+                            while(member_iterator.hasNext()){
+                                Member member = (Member)member_iterator.next();
+                                System.out.println("(test) Member ID : " + member.getMemberID());
+                                System.out.println("(test) Member point : " + member.getMembershipPoint());
+                            }
+
                             System.out.println("Member Addition Successful!");
                         } else if (c == '2') {
                             memberRepository.showAll();
@@ -82,6 +97,18 @@ public class App {
                             s.addMember(new Member("1", new ArrayList<>(), 0), memberRepository);
                             s.addMember(new Member("2", new ArrayList<>(), 0), memberRepository);
                             s.addMember(new Member("3", new ArrayList<>(), 0), memberRepository);
+
+//                            member_group.AddMember(new Member("1", new ArrayList<>(), 0));
+//                            member_group.AddMember(new Member("2", new ArrayList<>(), 0));
+//                            member_group.AddMember(new Member("3", new ArrayList<>(), 0));
+
+//                            MemberGroupIterator member_iterator = member_group.iterator();
+//                            while(member_iterator.hasNext()){
+//                                Member member = (Member)member_iterator.next();
+//                                System.out.println("(test) Member ID : " + member.getMemberID());
+//                                System.out.println("(test) Member point : " + member.getMembershipPoint());
+//                            }
+
                             System.out.println("Member Addition Successful!");
                         } else if (c == '2') {
                             memberRepository.showAll();
@@ -124,9 +151,14 @@ public class App {
                             if (c == '1') {
                                 m.viewPetList();
                             } else if (c == '2') {
+                                System.out.println("Please Enter Your Pet type (Dog, Cat).");
+                                String petType = sc.next();
+                                Pet p = petFactory.getPet(petType);
                                 System.out.println("Please Enter Your Pet name.");
                                 String petName = sc.next();
-                                m.addPetInfo(petName);
+                                m.addPetInfo(p,petName);
+                                member_group.AddMember(m);
+
                             } else if (c == '3') {
                                 System.out.println("not implemented yet...");
                             } else if (c == '4') {
@@ -164,7 +196,7 @@ public class App {
                                     // TODO: check out
                                     m.checkOut(m, petID, checkInRepository.getCheckIn_info_list());
 
-//                                    m.view_checkIn_info(checkInRepository.getCheckIn_info_list(), m);
+//                                  m.view_checkIn_info(checkInRepository.getCheckIn_info_list(), m);
                                 }
 
                             } else if (c == '7') {
@@ -182,6 +214,7 @@ public class App {
             } else break;
         }
     }
+
 
 
 //             switch (c){

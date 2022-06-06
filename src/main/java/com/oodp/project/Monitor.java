@@ -1,4 +1,6 @@
 package com.oodp.project;
 
-public class Monitor {
+public abstract class Monitor{
+    public abstract void monitorResult();
+
 }

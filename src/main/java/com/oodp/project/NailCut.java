@@ -1,33 +1,21 @@
 package com.oodp.project;
 
-public class NailCut {
-    private Pet pet;
-    private Member member;
+public class NailCut extends Monitor{
+    private static NailCut nailCut = null;
 
-    public NailCut(Member member, Pet pet){
-        super();
-        this.member = member;
-        this.pet = pet;
-    }
+    private NailCut(){}
 
-    public Member getMember(){
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public static NailCut getNailCut(){
+        if(nailCut == null){
+            nailCut = new NailCut();
+        }
+        return nailCut;
     }
 
     public void monitorResult() {
         System.out.println("    NailCut Service is Completed!");
     }
 
+
 }
+

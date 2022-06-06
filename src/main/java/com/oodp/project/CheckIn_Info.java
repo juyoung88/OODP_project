@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 enum MonitorType{
-    Sleep, Walk, Eat, Groom, Shower, EarClean, NailCut;
+    Sleep, Walk, Eat, Groom, Shower, EarClean, NailCut
 }
 
 public class CheckIn_Info {
@@ -17,8 +17,8 @@ public class CheckIn_Info {
     private int price = 0;
     private Date startDate;
     private Date endDate;
-    private Pet pet;
-    private Member member;
+    private Pet pet;    private Member member;
+
 
 
     public CheckIn_Info(Member member, Pet pet, List<MonitorType> monitorTypes, List<String> requirement, int price, Date startDate, Date endDate) {
@@ -56,6 +56,7 @@ public class CheckIn_Info {
         this.price = price;
     }
 
+
     public Pet getPet() {
         return pet;
     }
@@ -78,7 +79,13 @@ public class CheckIn_Info {
 
     public int getPrice() {
         calculatePrice();
+        setMemberPoint();
         return price;
+    }
+    public void setMemberPoint() {
+        int point = this.price;
+        point *= 0.07;
+        this.member.setMembershipPoint(point);
     }
 
     public String getStartDate() {
@@ -127,38 +134,44 @@ public class CheckIn_Info {
         }
         return price;
     }
+
+
     public void printMonitorResult() {
         for (MonitorType monitorType : getMonitorTypes()) {
             switch (monitorType) {
                 case Sleep:
-                    Sleep sleepMonitor = new Sleep(member, pet);
-                    sleepMonitor.monitorResult();
+                    Sleep sleep = Sleep.getSleep();
+                    sleep.monitorResult();
                     break;
                 case Walk:
-                    Walk walkMonitor = new Walk(member, pet);
-                    walkMonitor.monitorResult();
+                    Walk walk = Walk.getWalk();
+                    walk.monitorResult();
                     break;
                 case Groom:
-                    Groom groomMonitor = new Groom(member, pet);
-                    groomMonitor.monitorResult();
+                    Groom groom = Groom.getGroom();
+                    groom.monitorResult();
                     break;
                 case Shower:
-                    Shower showerMonitor = new Shower(member, pet);
-                    showerMonitor.monitorResult();
+                      Shower shower = Shower.getShower();
+                      shower.monitorResult();
                     break;
                 case Eat:
-                    Eat eatMonitor = new Eat(member, pet);
-                    eatMonitor.monitorResult();
+                    Eat eat = Eat.getEat();
+                    eat.monitorResult();
                     break;
                 case EarClean:
-                    EarClean earCleanMonitor = new EarClean(member, pet);
-                    earCleanMonitor.monitorResult();
+                    EarClean earClean = EarClean.getEarClean();
+                    earClean.monitorResult();
                     break;
                 case NailCut:
-                    NailCut nailCutMonitor = new NailCut(member, pet);
-                    nailCutMonitor.monitorResult();
+                    NailCut nailCut = NailCut.getNailCut();
+                    nailCut.monitorResult();
                     break;
             }
         }
+    }
+    public void addWeight(int weight){
+        if(weight > 10) price += 10;
+        else if(weight > 5) price += 5;
     }
 }

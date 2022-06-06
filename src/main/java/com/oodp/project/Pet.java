@@ -5,8 +5,20 @@ import java.util.List;
 public class Pet {
     private String petID;
     private String petName;
-    private Monitor monitor;
+
+    
     private List<String> monitorResult;
+
+    private String petType;
+
+    public String getPetType() {
+        return petType;
+    }
+
+    public void setPetType(String petType) {
+        this.petType = petType;
+    }
+
 
     public String getPetID() {
         return petID;
@@ -24,13 +36,7 @@ public class Pet {
         this.petName = petName;
     }
 
-    public Monitor getMonitor() {
-        return monitor;
-    }
 
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
-    }
 
     public List<String> getMonitorResult() {
         return monitorResult;
@@ -40,11 +46,17 @@ public class Pet {
         this.monitorResult = monitorResult;
     }
 
-    public Pet(String petID, String petName, Monitor monitor, List<String> monitorResult) {
+    public Pet(String petID, String petName,List<String> monitorResult) {
         super();
         this.petID = petID;
         this.petName = petName;
-        this.monitor = monitor;
         this.monitorResult = monitorResult;
+
     }
+    public Pet() {
+        super();
+        this.petID=null;
+        this.petName=null;
+    }
+
 }

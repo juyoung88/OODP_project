@@ -1,6 +1,7 @@
 package com.oodp.project;
 
 public interface StaffRole {
-    public void viewStaffRole();
-    public void calculateStaffSalary();
+    void viewStaffRole();
+    void calculateStaffSalary();
+
 }

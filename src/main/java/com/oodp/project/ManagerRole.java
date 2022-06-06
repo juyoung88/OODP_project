@@ -19,4 +19,5 @@ public class ManagerRole implements StaffRole {
         System.out.println("Your salary is " + salary + " won.");
     }
 
+
 }

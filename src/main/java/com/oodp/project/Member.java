@@ -45,14 +45,24 @@ public class Member {
 
 
     public void addPetInfo(String petName) {
-        Monitor m = new Monitor();
         int petID = getPetList().size() + 1;
         List<String> monitorResult = new ArrayList<>();
-        Pet p = new Pet(Integer.toString(petID), petName, m, monitorResult);
+        Pet p = new Pet(Integer.toString(petID), petName, monitorResult);
+
         this.petList.add(p);
 
         System.out.println("Pet Info Addition Successful!");
         System.out.println(getMemberID() + "'s new pet : " + p.getPetName());
+    }
+    public void addPetInfo(Pet pet, String petName) {
+        int petID = getPetList().size() + 1;
+        pet.setPetID(Integer.toString(petID));
+        pet.setPetName(petName);
+        this.petList.add(pet);
+
+        System.out.println("Pet Info Addition Successful!");
+        System.out.println(getMemberID() + "'s new pet : " + pet.getPetName());
+        System.out.println("petType : " + pet.getPetType());
     }
 
     public void viewPetList() {
@@ -79,13 +89,16 @@ public class Member {
 
         }
         System.out.println("The petID does not exist. Please try again.");
-        Monitor m = new Monitor();
         List<String> monitorResult = new ArrayList<>();
-        return new Pet("0", "", m, monitorResult);
+        return new Pet("0", "", monitorResult);
     }
 
     public void checkIn(Member m, String petID, List<CheckIn_Info> checkInList) {
         CheckIn_Info check = new CheckIn_Info(m, m.findByPetID(petID), new ArrayList<>(), new ArrayList<>(), 0, new Date(), new Date());
+        CheckIn_Group checkIn_group = new CheckIn_Group(5);
+        checkIn_group.AddCheckIn_Info(new CheckIn_Info(m, m.findByPetID(petID), new ArrayList<>(), new ArrayList<>(), 0, new Date(), new Date()));
+
+        CheckInIterator checkIn_iterator = checkIn_group.iterator();
 
         Scanner sc = new Scanner(System.in);
 
@@ -94,13 +107,16 @@ public class Member {
         if(c == '1'){
             typeMonitor(check);
         }
-
+        typeWeight(check);
         type_checkIn_info(check);
-        view_checkIn_info(checkInList, m);
-
         // repository 에 저장
         checkInList.add(check);
 //        System.out.println("saving in checkInList successful!");
+        while(checkIn_iterator.hasNext()){
+            CheckIn_Info checkIn_info = (CheckIn_Info)checkIn_iterator.next();
+            System.out.println("(test) Member : " + checkIn_info.getMember().getMemberID());
+            System.out.println("(test) Pet: " + checkIn_info.getPet().getPetName());
+        }
 
         view_checkIn_info(checkInList, m);
 
@@ -118,6 +134,14 @@ public class Member {
             }
         }
 
+    }
+
+    public static void typeWeight(CheckIn_Info check){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Type your pet's weight(kg)");
+        int weight = sc.nextInt();
+        check.addWeight(weight);
     }
 
     public static void typeMonitor(CheckIn_Info check) {
@@ -192,6 +216,9 @@ public class Member {
                 System.out.println("End Day : " + check.getEndDate());
                 System.out.println("Your requirement : " + check.getRequirement());
                 System.out.println("Total price : " + check.getPrice());
+                System.out.println("Membership point : " + m.getMembershipPoint());
+                System.out.println("monitor result : ");
+                check.printMonitorResult();
             }
         }
         if (!found) {
